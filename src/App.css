@@ -1,38 +1,294 @@
+#root {
+	background-color: #f0f3f5;
+}
+
 .App {
-  text-align: center;
+	margin: auto;
+	width: 45%;
+	min-width: 950px;
+	text-align: center;
+	background-color: #ffffff;
+	overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+	display: flex;
+	border: 1px solid #7e1fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Form */
+.form-container {
+	margin: 25px;
+	width: 50%;
+	max-height: 1000px;
+	background-color: #f0f3f5;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* New Card Button */
+.new-card-button-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #7e1fff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.new-card-button {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 20px;
+	padding: 13px;
+	width: 150px;
+	min-width: 50px;
+	color: #7e1fff;
+	background-color: #ffffff;
+	border: 1px solid #7e1fff;
+	border-radius: 50px;
+	cursor: pointer;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	transition: 0.2s linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-card-button:hover {
+	border: 1px solid #ffffff;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Saving */
+.save-timeout {
+	margin-right: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* Inputs */
+.input-container {
+	display: flex;
+	flex-direction: column;
+	margin-left: 25px;
+}
+
+/* Input Titles */
+.content-title {
+	text-align: start;
+	margin: 50px 0 5px 1px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* Publisher Input */
+select {
+	font-size: 14px;
+	width: 65%;
+	padding: 15px;
+	color: #889098;
+	border: 1px solid #889098;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* Headline Input */
+textarea {
+	padding: 15px;
+	width: 85%;
+	border: 1px solid #889098;
+	border-radius: 5px;
+	resize: none;
+}
+
+/* Media Input */
+.radio-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* Radio Input Labels */
+label {
+	display: flex;
+	margin: 0 0 10px 2px;
+	align-items: center;
+	font-size: 14px;
+	color: #889098;
+}
+
+/* Radio Inputs */
+input[type='radio'] {
+	margin-left: 60px;
+	appearance: none;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	background-color: #ffffff;
+	border: 1px solid #889098;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+input[type='radio']:checked {
+	border: 1px solid #7e1fff;
+	background-image: radial-gradient(
+		ellipse at center,
+		#7e1fff 0%,
+		#7e1fff 40%,
+		#ffffff 45%
+	);
+	background-repeat: no-repeat;
+}
+
+/* Published Time Input */
+input[type='datetime-local'] {
+	appearance: none;
+	width: 55%;
+	padding: 15px;
+	color: #889098;
+	border: 1px solid #889098;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+select,
+textarea,
+input[type='datetime-local'] {
+	outline: none;
+}
+
+/* Delete Card Button */
+.delete-card-button-container {
+	display: flex;
+	justify-content: flex-end;
+	margin: 100px 0 75px 0;
+}
+
+.delete-card-button {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 25px;
+	padding: 13px;
+	width: 150px;
+	min-width: 50px;
+	color: #88909875;
+	background-color: #ffffff;
+	border: 1px solid #88909875;
+	border-radius: 50px;
+	cursor: pointer;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	transition: 0.2s linear;
+}
+
+.delete-card-button:hover {
+	color: #ec1730;
+	border: 1px solid #ec1730;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards */
+.card-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	background-color: #f0f3f5;
+}
+
+/* Card List */
+.card-list {
+	margin: 100px 0;
+}
+
+/* Added Cards */
+.card {
+	display: flex;
+	flex: 0 0 100px;
+	margin: 20px 80px;
+	padding: 20px;
+	width: 375px;
+	text-align: start;
+	min-height: 120px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: 1px solid #889098;
+	cursor: pointer;
+}
+
+.card.active-card {
+	border: 3px solid #7e1fff;
+}
+
+/* Card Text Container */
+.card .text-container {
+	flex: 1 1 auto;
+	align-items: center;
+}
+
+/* Card Headline */
+.card h1 {
+	font-size: 18px;
+	color: #000000;
+	margin: 0 0 15px;
+}
+
+/* Card Text */
+.card p {
+	margin: 0 0 15px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #000000;
+	line-height: 16px;
+	inline-size: 250px;
+	overflow-wrap: break-word;
+}
+
+/* Card Date */
+.card h3 {
+	font-size: 11px;
+	color: #898989;
+}
+
+/* Card Media */
+.card .media {
+	flex: 0 1 auto;
+	flex-wrap: wrap;
+	color: #00000000;
+}
+
+.card.video .media,
+.card.image .media {
+	background-size: cover;
+	flex: 0 0 100px;
+	height: 100px;
+	border-radius: 10px;
+	background-image: url('/src/assets/media-image.jpg');
+}
+
+.card.video .media {
+	background-image: url('/src/assets/media-video.jpg');
+}
+
+/* Media Play Button */
+.video-button-container {
+	display: flex;
+	justify-content: center;
+	margin: 25px;
+}
+
+.video-button {
+	height: 50px;
+	width: 50px;
+	color: #000000;
+	font-weight: 500;
+	opacity: 50%;
+	border-radius: 50px;
+	transition: 0.2s linear;
+}
+
+.video-button:hover {
+	opacity: 90%;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
